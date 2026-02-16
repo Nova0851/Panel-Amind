@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<title>Scam King Cracker - Panel </title>
+
+<style>
+/* ... TU ESTILO ORIGINAL COMPLETO (NO TOQUÉ NADA) ... */
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+body{
+  background:url('https://i.postimg.cc/BbDT8Z8G/Screenshot-20231009-191938-Lite.jpg') no-repeat center center fixed;
+  background-size:cover;
+  color:#00ff00;
+  text-shadow:0 0 8px #00ff00;
+  overflow-x:hidden;
+}
+#bienvenido{width:100%;white-space:nowrap;overflow:hidden;font-size:24px;animation:mover 6s linear;position:absolute;top:10px;left:0}
+@keyframes mover{0%{transform:translateX(100%)}100%{transform:translateX(-100%)}}
+#mensajeFinal{display:none;margin-top:60px;text-align:center;font-size:20px;animation:palpitar 1.2s infinite}
+@keyframes palpitar{0%{transform:scale(1)}50%{transform:scale(1.15)}100%{transform:scale(1)}}
+#icon{width:40px;height:38px;border-radius:50%;display:block;margin:95px auto 12px auto;box-shadow:0 0 20px #00ff00}
+
+/* botón menú (arriba derecha) */
+#menuBtn {
+    position: absolute;
+    right: 5px;
+    top: 17px;
+    background: black;
+    padding: 6px 10px;
+    color: #0f0;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1;
+    border-radius: 8px;
+    box-shadow: 0 0 10px #00ff00;
+    border:1px solid #0f0;
+    cursor: pointer;
+    z-index: 9999;
+}
+#menuBtn:hover {
+    animation-duration: 0.15s !important;
+    box-shadow: 0 0 80px #0f0, 0 0 120px #f00;
+    border: 3px solid #f00;
+    transform: scale(1.1);
+    z-index: 9999;
+}
+@keyframes glitch {
+    0%, 100% { text-shadow: 0 0 10px #0f0; }
+    20% { text-shadow: 6px 0 #f00, -6px 0 #0ff; }
+    40% { text-shadow: -6px 0 #f00, 6px 0 #0ff; }
+    60% { text-shadow: 4px 0 #ff0, -4px 0 cyan; }
+    80% { text-shadow: -4px 0 magenta, 4px 0 yellow; }
+}
+#menuBtn { animation: glitch 3s infinite alternate-reverse; }
+
+/* panel */
+#panel{
+  position:fixed;top:0;right:-350px;width:350px;height:100%;
+  background:rgba(0,0,0,0.92);padding:20px;transition:right 0.4s;overflow-y:auto;
+  border-left:2px solid #00ff00;box-shadow:0 0 20px #00ff00 inset;
+  z-index:9000;
+}
+#panel.abierto{right:0}
+#panel h2{color:#00ff00;text-align:center;margin-bottom:20px;text-shadow:0 0 10px #00ff00}
+.btn {
+    width: 100%;
+    margin: 10px 0;
+    padding: 12px;
+    text-align: center;
+    background: transparent;
+    color: #0f0;
+    border: 1px solid #0f0;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    -webkit-tap-highlight-color: transparent;
+}
+.btn-green-update{background:#00ff00;color:black;font-weight:bold;border-radius:10px;border:none;padding:12px;width:100%;cursor:pointer;box-shadow:0 0 15px #00ff00;text-align:center;font-size:16px;margin-top:10px}
+.btn-red-clear{background:red;color:black;font-weight:bold;border-radius:8px;border:none;padding:8px;width:100%;cursor:pointer;box-shadow:0 0 10px red;text-align:center;font-size:14px;margin-bottom:10px}
+.btn-red-small{background:red;color:black;font-weight:bold;border-radius:5px;border:none;padding:2px 6px;font-size:12px;cursor:pointer;box-shadow:0 0 5px red;margin-left:5px}
+.contactoLink{display:block;margin:10px 0;color:#00ff00;text-decoration:none;font-size:16px;text-shadow:0 0 8px #00ff00}
+#submenu{width:90%;margin:auto;margin-bottom:15px;margin-top:10px;position:relative;z-index:1}
+#registros{display:none;margin-top:20px;max-height:350px;overflow-y:auto;border:1px solid #00ff00;border-radius:10px;padding:10px;font-family:monospace;font-size:14px;line-height:1.4;white-space:pre-line;color:#00ff00;box-shadow:0 0 15px #00ff00 inset;background:rgba(0,0,0,0.7)}
+.registroItem{margin-bottom:6px}
+#modalConfirm{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);justify-content:center;align-items:center;z-index:10000}
+#modalContent{background:black;border:3px solid red;padding:20px;border-radius:10px;text-align:center;min-width:250px}
+#modalTitulo{color:red;font-weight:bold;font-size:18px;margin-bottom:15px}
+#modalContent button{margin:5px;padding:8px 15px;border:none;border-radius:6px;cursor:pointer;font-weight:bold}
+#modalSi{background:red;color:black}
+#modalNo{background:#555;color:#fff}
+#mensajeCopiado{display:none;margin-top:8px;color:#ff0033;font-weight:bold;text-shadow:0 0 10px red;font-size:14px;animation:matrixFade 3s forwards}
+@keyframes matrixFade{0%{opacity:1}100%{opacity:0}}
+
+/* CUSTOM SELECT */
+.matrix-wrap { position: relative; width:100%; }
+#fakeSelect {
+  position: relative;
+  z-index:2;
+  width:100%;
+  padding:10px;
+  border-radius:10px;
+  background-color: rgba(0,0,0,0);
+  color:#00ff00;
+  border:1px solid #00ff00;
+  font-weight:bold;
+  font-size:16px;
+  text-shadow:0 0 10px #00ff00;
+  cursor:pointer;
+  user-select:none;
+}
+#fakeSelect:hover {
+    animation-duration: 0.15s !important;
+    border: 3px solid #f00;
+    transform: scale(1.1);
+    z-index: 9999;
+}
+#fakeSelect { animation: glitch 3s infinite alternate-reverse; }
+
+/* canvas con matrix detrás del fakeSelect */
+.matrix-canvas {
+  position:absolute;
+  top:0; left:0; width:100%; height:100%;
+  z-index:1;
+  pointer-events:none;
+}
+
+/* opciones desplegables */
+#optionsList {
+  display:none;
+  position:absolute;
+  top:calc(100% + 8px);
+  left:0;
+  width:100%;
+  max-height:220px;
+  overflow:auto;
+  background:rgba(0,0,0,0.95);
+  border-radius:10px;
+  box-shadow:0 0 20px rgba(0,255,0,0.25);
+  z-index:3000;
+  padding:6px;
+}
+.optionItem {
+  padding:10px;
+  color:#00ff00;
+  font-weight:bold;
+  text-shadow:0 0 6px #00ff00;
+  cursor:pointer;
+  border-radius:6px;
+}
+#optionsList {
+  display: none;
+  position: absolute;
+  top: calc(13% + 8px);
+  left: 0;
+  width: 100%;
+  max-height: 220px;
+  overflow-y: auto;
+  border-radius: 0;
+  background-image: url('https://i.postimg.cc/fyv1Y8Xy/images-(23).jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-shadow: none;
+  z-index: 3000;
+  padding: 6px;
+}
+
+/* NUEVO CSS GLOBAL PARA QUE EL TEMA SE APLIQUE A TODO */
+body { transition: background-color 0.25s, color 0.25s; }
+h1, h2, h3, h4, h5, h6, p, label, a, span, div { transition: color 0.25s, text-shadow 0.25s; }
+button { transition: background-color 0.25s, border-color 0.25s, color 0.25s, box-shadow 0.25s; }
+select, input, textarea { transition: background-color 0.25s, color 0.25s, border-color 0.25s; }
+#fakeSelect, .optionItem { transition: background-color 0.25s, color 0.25s; }
+#panel { transition: background-color 0.25s; }
+#submenu { transition: background-color 0.25s; }
+.contactoLink { transition: color 0.25s; }
+#mensajeUpdate { display: none; color: #00ff00; font-size: 14px; font-weight: bold; text-align: center; margin-top: 10px; position: relative; z-index: 99999 !important; pointer-events: none; }
+@keyframes fadeInOut { 0% { opacity: 0; } 10% { opacity: 1; } 85% { opacity: 1; } 100% { opacity: 0; } }
+
+/* Contenedor del acortador */
+#acortador {
+  background: rgba(0,0,0,0.8);
+  border: 2px solid #00ff00;
+  box-shadow: 0 0 15px #00ff00 inset, 0 0 12px #00ff00;
+  padding: 12px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 480px;
+  margin: 15px auto;
+  font-family: 'Courier New', monospace;
+  color: #00ff00;
+  text-align: center;
+}
+
+/* Inputs */
+#acortador input[type="text"] {
+  background: rgba(0,0,0,0.9);
+  border: 2px solid #00ff00;
+  box-shadow: 0 0 10px #00ff00 inset;
+  border-radius: 6px;
+  padding: 6px 8px;
+  color: #00ff00;
+  font-weight: bold;
+  margin: 4px 2px;
+  width: calc(100% - 16px);
+  font-family: 'Courier New', monospace;
+  text-shadow: 0 0 6px #00ff00;
+}
+
+/* Botón */
+#acortador button {
+  background: #000;
+  color: #00ff00;
+  border: 2px solid #00ff00;
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  text-shadow: 0 0 6px #00ff00;
+  box-shadow: 0 0 12px #00ff00 inset, 0 0 10px #00ff00;
+  transition: all 0.2s;
+}
+#acortador button:hover {
+  background: #00ff00;
+  color: black;
+  box-shadow: 0 0 20px #00ff00, 0 0 10px #00ff00 inset;
+}
+
+/* Link generado */
+#acortador #linkAcortado {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #00ff00;
+  text-shadow: 0 0 10px #00ff00;
+  word-break: break-all;
+}
+#acortador #linkAcortado a {
+  color: #00ff00;
+  text-decoration: none;
+  font-weight: bold;
+}
+#acortador #linkAcortado a:hover {
+  text-decoration: underline;
+}
+
+.resultado-matrix span {word-break: break-all;}
+.btn-copiar {
+  background: #000;
+  color: #00ff00;
+  border: 2px solid #00ff00;
+  border-radius: 6px;
+  padding: 4px 8px;
+  cursor: pointer;
+  font-weight: bold;
+  text-shadow: 0 0 6px #00ff00;
+  transition: all 0.2s;
+}
+.btn-copiar:hover {background: #00ff00;color: #000;text-shadow: none;}
+
+/* Estilo para la ventana del acortador */
+#ventanaAcortador {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-image: url('https://imgs.search.brave.com/uQDr4LVyOA-WOagD0qA2jsR_3D-Un5R0jJ0kqZk1VCw/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9naWZk/Yi5jb20vaW1hZ2Vz/L2hpZ2gvcmFpbmlu/Zy1zb2Z0LW1hdHJp/eC1jb2RlLWhiNmlh/bzFsamk3cHkya3Mu/Z2lm.gif');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px #00ff00;
+  z-index: 9999;
+  width: 500px;
+  max-width: 90%;
+}
+
+/* Corrección anti-deslizamiento TOTAL */
+html, body {overflow-x: hidden !important;overscroll-behavior: none !important;height: 100%;}
+#wrapper-fijo {position: relative;height: 100vh;overflow: hidden;width: 100%;}
+#usuariosOnlineBox {
+    position: fixed;
+    top: 17px !important;
+    left: 40%;
+    width: 45%;
+    z-index: 9990;
+    pointer-events: none;
+    transition: top 0.3s ease;
+}
+@media screen and (max-height: 600px) {#usuariosOnlineBox {top: -60px !important;}}
+
+/* ==================== TEMA2 - EFECTOS ANIMADOS EN TODO ==================== */
+.btn::before,#menuBtn::before,#chatSend::before,#fakeSelect::before,#chatPanel::before,#chatMessages::before,#chatInput::before,#chatUsuario::before,#acortador::before,.btn-copiar::before,#panel::before,#submenu > div::before,#registros::before,#ventanaAcortador::before,#ventanaMisEnlaces::before,#modalContent::before,#usuariosOnlineBox div::before,#btnMostrarAcortador::before,#acortadorBtn::before,.btn[onclick="copiarLink()"]::before{
+    content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:0.65;
+}
+.tema-none::before     {background:transparent}
+.tema-matrix::before   {background:repeating-linear-gradient(0deg,transparent,transparent 20px,rgba(0,255,0,0.4)20px,rgba(0,255,0,0.4)40px);animation:m 10s linear infinite}
+.tema-grid::before     {background:linear-gradient(rgba(0,255,0,.25)1px,transparent 1px),linear-gradient(90deg,rgba(0,255,0,.25)1px,transparent 1px);background-size:50px 50px;animation:g 20s linear infinite}
+.tema-scan::before     {background:repeating-linear-gradient(90deg,rgba(0,255,0,.15)0px,rgba(0,255,0,.15)6px,transparent 6px,transparent 12px);animation:s 6s linear infinite}
+.tema-holo::before     {background:linear-gradient(90deg,transparent,rgba(0,255,200,.6),transparent);animation:h 4s linear infinite}
+.tema-transparent::before {background:transparent;opacity:0}
+.tema-neon::before     {background:linear-gradient(45deg,rgba(0,255,0,0.3),rgba(0,255,255,0.3));animation:n 5s linear infinite}
+.tema-circuit::before   {background:repeating-linear-gradient(45deg,rgba(0,255,0,0.2) 0px,rgba(0,255,0,0.2) 10px,transparent 10px,transparent 20px);animation:c 8s linear infinite}
+.tema-glitch2::before  {background:linear-gradient(0deg,rgba(255,0,0,0.2),rgba(0,255,0,0.2),rgba(0,0,255,0.2));animation:gl 3s linear infinite}
+.tema-wave::before     {background:linear-gradient(90deg,rgba(0,255,0,0.2),transparent,rgba(0,255,0,0.2));animation:w 6s linear infinite}
+.tema-pulse::before    {background:radial-gradient(circle,rgba(0,255,0,0.4),transparent);animation:p 4s ease-in-out infinite}
+.tema-hack::before     {background:repeating-linear-gradient(0deg,rgba(0,255,0,0.2) 0px,rgba(0,255,0,0.2) 5px,transparent 5px,transparent 10px);animation:hk 7s linear infinite}
+.tema-darkspark::before{background:#000;animation:ds 6s linear infinite;box-shadow:inset 0 0 20px rgba(0,255,0,0.3)}
+.tema-darkspark::after{content:'••••••••••';position:absolute;color:rgba(0,255,0,0.5);font-size:8px;animation:sparkle 3s linear infinite;letter-spacing:2px}
+.tema-neonglow::before{background:#000;animation:ng 5s linear infinite;box-shadow:inset 0 0 15px rgba(0,255,0,0.4)}
+.tema-neonglow::after{content:'✶✶✶';position:absolute;color:rgba(0,255,0,0.6);font-size:10px;animation:twinkle 2.5s linear infinite;letter-spacing:3px}
+.tema-darkgrid::before{background:linear-gradient(rgba(0,255,0,.15) 1px,transparent 1px),linear-gradient(90deg,rgba(0,255,0,.15) 1px,#000 1px);background-size:40px 40px;animation:dg 15s linear infinite}
+.tema-darkpulse::before{background:#000;animation:dp 4s ease-in-out infinite}
+.tema-darkpulse::after{content:'•••';position:absolute;color:rgba(0,255,0,0.4);font-size:12px;animation:pulse2 2s linear infinite}
+.tema-cyberspark::before{background:linear-gradient(45deg,#000,rgba(0,255,0,0.2),#000);animation:cs 6s linear infinite}
+.tema-cyberspark::after{content:'*****';position:absolute;color:rgba(0,255,0,0.5);font-size:9px;animation:sparkle2 3.5s linear infinite}
+.tema-darkglitch::before{background:#000;animation:dg2 2.5s linear infinite;box-shadow:inset 0 0 20px rgba(255,0,0,0.2),inset 0 0 20px rgba(0,255,0,0.2)}
+.tema-darkglitch::after{content:'X';position:absolute;color:rgba(0,255,0,0.4);font-size:10px;animation:glitch2 1.5s linear infinite}
+.tema-darkwave::before{background:linear-gradient(90deg,#000,rgba(0,255,0,0.25),#000);animation:dw 7s linear infinite}
+.tema-darkwave::after{content:'••••';position:absolute;color:rgba(0,255,0,0.3);font-size:8px;animation:wave2 4s linear infinite}
+.tema-darkscan::before{background:repeating-linear-gradient(45deg,rgba(0,255,0,0.1) 0px,rgba(0,255,0,0.1) 5px,#000 5px,#000 10px);animation:dsc 5s linear infinite}
+.tema-darkholo::before{background:linear-gradient(135deg,#000,rgba(0,255,200,0.3),#000);animation:dh 6s linear infinite}
+.tema-darkholo::after{content:'*•*';position:absolute;color:rgba(0,255,0,0.4);font-size:10px;animation:twinkle2 3s linear infinite}
+.tema-darkcircuit::before{background:repeating-linear-gradient(30deg,rgba(0,255,0,0.15) 0px,rgba(0,255,0,0.15) 6px,#000 6px,#000 12px);animation:dc 8s linear infinite}
+@keyframes m{0%{background-position:0 0}100%{background-position:0 600px}}
+@keyframes g{0%{background-position:0 0}100%{background-position:100px 100px}}
+@keyframes s{0%{background-position:0 0}100%{background-position:200px 0}}
+@keyframes h{0%{transform:translateX(-120%)}100%{transform:translateX(120%)}}
+@keyframes n{0%{background-position:0 0}100%{background-position:360deg}}
+@keyframes c{0%{background-position:0 0}100%{background-position:40px 40px}}
+@keyframes gl{0%{background-position:0 0}100%{background-position:0 100%}}
+@keyframes w{0%{background-position:0 0}100%{background-position:200px 0}}
+@keyframes p{0%{transform:scale(1)}50%{transform:scale(1.2)}100%{transform:scale(1)}}
+@keyframes hk{0%{background-position:0 0}100%{background-position:0 20px}}
+@keyframes ds{0%{box-shadow:inset 0 0 20px rgba(0,255,0,0.3)}50%{box-shadow:inset 0 0 30px rgba(0,255,0,0.5)}100%{box-shadow:inset 0 0 20px rgba(0,255,0,0.3)}}
+@keyframes sparkle{0%{transform:translateY(0);opacity:0.5}50%{transform:translateY(-10px);opacity:1}100%{transform:translateY(0);opacity:0.5)}}
+@keyframes ng{0%{box-shadow:inset 0 0 15px rgba(0,255,0,0.4)}50%{box-shadow:inset 0 0 25px rgba(0,255,0,0.6)}100%{box-shadow:inset 0 0 15px rgba(0,255,0,0.4)}}
+@keyframes twinkle{0%{opacity:0.5}50%{opacity:1}100%{opacity:0.5}}
+@keyframes dg{0%{background-position:0 0}100%{background-position:80px 80px}}
+@keyframes dp{0%{transform:scale(1);box-shadow:inset 0 0 10px rgba(0,255,0,0.3)}50%{transform:scale(1.15);box-shadow:inset 0 0 20px rgba(0,255,0,0.5)}100%{transform:scale(1);box-shadow:inset 0 0 10px rgba(0,255,0,0.3)}}
+@keyframes pulse2{0%{opacity:0.4}50%{opacity:1}100%{opacity:0.4}}
+@keyframes cs{0%{background-position:0 0}100%{background-position:100px 100px}}
+@keyframes sparkle2{0%{transform:translateX(0);opacity:0.5}50%{transform:translateX(10px);opacity:1}100%{transform:translateX(0);opacity:0.5}}
+@keyframes dg2{0%{box-shadow:inset 0 0 20px rgba(255,0,0,0.2)}50%{box-shadow:inset 0 0 30px rgba(0,255,0,0.4)}100%{box-shadow:inset 0 0 20px rgba(255,0,0,0.2)}}
+@keyframes glitch2{0%{transform:skew(0deg);opacity:0.4}50%{transform:skew(2deg);opacity:1}100%{transform:skew(0deg);opacity:0.4}}
+@keyframes dw{0%{background-position:0 0}100%{background-position:150px 0}}
+@keyframes wave2{0%{transform:translateY(0);opacity:0.3}50%{transform:translateY(-8px);opacity:0.8}100%{transform:translateY(0);opacity:0.3}}}
+@keyframes dsc{0%{background-position:0 0}100%{background-position:100px 100px}}
+@keyframes dh{0%{transform:translateX(-150%)}100%{transform:translateX(150%)}}
+@keyframes twinkle2{0%{opacity:0.4}50%{opacity:1}100%{opacity:0.4}}
+@keyframes dc{0%{background-position:0 0}100%{background-position:24px 24px}}
+
+/* LISTA TEMA2 */
+#listaTema2{
+    display:none;
+    margin-top:10px;
+    background:rgba(0,0,0,0.95);
+    padding:12px;
+    border:2px solid #00ff00;
+    border-radius:10px;
+    position:relative;
+    z-index:3;
+    box-shadow:0 0 15px #00ff00;
+}
+.tema-opt{
+    padding:14px;
+    margin:6px 0;
+    background:rgba(0,255,0,0.2);
+    border:1px solid #00ff00;
+    border-radius:8px;
+    color:#00ff00;
+    text-align:center;
+    cursor:pointer;
+    font-weight:bold;
+    transition:0.3s;
+}
+.tema-opt:hover{
+    background:#00ff00;
+    color:black;
+    transform:scale(1.05);
+    box-shadow:0 0 20px #0f0;
+}
+
+/* MENSAJE ÉPICO (TUS DOS VERSIONES) */
+#mensajeCopiado,#mensajeCopiadoAcortador{
+  display:none;
+  margin-top:12px;
+  padding:14px 20px;
+  background:rgba(0,255,0,0.15);
+  border:2px solid #00ff00;
+  border-radius:10px;
+  color:#00ff00;
+  font-weight:bold;
+  font-size:19px;
+  text-align:center;
+  font-family:'Courier New',monospace;
+  text-shadow:0 0 10px #00ff00,0 0 20px #00ff00,0 0 35px #00ff00,3px 3px 0 #f00,-3px -3px 0 #0ff;
+  box-shadow:0 0 30px #00ff00 inset,0 0 20px #00ff00;
+  animation:glitchCopy 0.7s ease-in-out,pulse 1.5s infinite;
+  letter-spacing:3px;
+}
+@keyframes glitchCopy{0%{transform:translate(0);opacity:0}10%{transform:translate(-2px,-2px);opacity:1}20%{transform:translate(2px,2px)}30%{transform:translate(-2px,2px)}40%{transform:translate(2px,-2px)}100%{transform:translate(0);opacity:1}}
+@keyframes pulse{0%,100%{text-shadow:0 0 10px #00ff00,0 0 20px #00ff00,0 0 30px #00ff00,2px 2px 0 #f00,-2px -2px 0 #0ff}50%{text-shadow:0 0 20px #00ff00,0 0 40px #00ff00,0 0 60px #00ff00,4px 4px 0 #f00,-4px -4px 0 #0ff}}
+
+/* Contenedor principal del chat */
+#chatPanel {
+    /* CAMBIO: Eliminamos el ancho fijo de 350px para que se ajuste mejor al móvil */
+    width: 100%; /* Usamos un porcentaje para el ancho por defecto */
+    max-width: 450px; /* Le ponemos un max-width para desktop */
+    margin-left: auto;
+    margin-right: auto;
+    background: transparent;
+    color: #0f0;
+    padding: 10px;
+    border-radius: 8px;
+    position: relative;
+    margin-top: 160px;
+    border: 1px solid #0f0;
+}
+
+/* Título */
+#chatPanel h3 {
+    margin: 0 0 10px 0;
+    text-align: center;
+    font-weight bold;
+}
+
+/* Contenedor de mensajes */
+#chatMessages {
+    height: 280px;
+    border: 2px solid #0f0;
+    padding: 8px;
+    overflow-y: auto;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+/* Contenedor del input */
+.chat-input-container {
+    position: relative;
+    margin-top: 10px;
+}
+
+/* Campo de texto — MÁS PEQUEÑO COMO PEDISTE */
+#chatInput {
+    width: 100%;
+    height: 55px;
+    resize: none;
+    padding: 10px 100px 10px 10px;
+    font-size: 15px;
+    border-radius: 6px;
+    border: 1px solid black;
+    background: rgba(0,0,0,0.6);
+    color: #0f0;
+}
+
+/* Botón enviar — MÁS PEQUEÑO */
+#chatSend {
+    position: absolute;
+    right: 5px;
+    top: 10px;
+    height: 38px;
+    width: 70px;
+    background: #003b00;
+    color: #0f0;
+    border: 10px solid #0f0;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+}
+#chatSend:hover {
+    background: #005000;
+}
+
+/* Botón MAX — NUEVO ESTILO + MEJOR UBICACIÓN */
+#fullscreenChatBtn {
+    position: absolute;
+    right: 80px;
+    top: 10px;
+    height: 23px;
+    width: 30px;
+    font-size: 9px;
+    background: #001a00;
+    color: #0f0;
+    border: 1px solid #0f0;
+    border-radius: 6px;
+    cursor: pointer;
+}
+#fullscreenChatBtn:hover {
+    background: #004000;
+}
+
+/* REEMPLAZA TODA esta regla que tenías antes */
+/* ==================== CHAT FULLSCREEN PERFECTO EN MÓVIL ==================== */
+#chatPanel.fullscreen {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100vw !important;
+    height: 100dvh !important; /* respeta notch y barras */
+    max-height: 100dvh !important;
+    margin: 0 !important;
+    padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left) !important;
+    background: rgba(0,0,0,0.98);
+    z-index: 10000;
+    border-radius: 0;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    transform: none !important; /* quitamos el translate que causaba el salto */
+    overflow: hidden; /* importante para que no se mueva nada */
+}
+
+/* --- CORRECCIÓN 1: Ajuste de texto en el área de mensajes --- */
+/* Aplica estas reglas tanto al chat normal como al fullscreen para consistencia */
+#chatMessages, 
+#chatPanel.fullscreen #chatMessages {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch; /* scroll suave en iOS */
+    padding: 10px;
+    margin-bottom: 10px;
+    /* --- INICIO DE LAS REGLAS CLAVE PARA EVITAR DESBORDAMIENTO HORIZONTAL --- */
+    word-wrap: break-word; /* Rompe palabras largas si no caben */
+    overflow-wrap: break-word; /* Versión moderna de word-wrap */
+    word-break: break-word; /* Asegura que el texto se rompa antes de desbordar */
+    white-space: pre-wrap; /* Mantiene los saltos de línea del usuario, pero permite el ajuste automático */
+    /* --- FIN DE LAS REGLAS CLAVE --- */
+}
+
+/* --- CORRECCIÓN 2: Ocultar el menú principal en pantalla completa --- */
+/* Cuando el chat está en fullscreen, el botón de menú y el wrapper fijo se ocultan */
+#chatPanel.fullscreen ~ #wrapper-fijo #menuBtn,
+#chatPanel.fullscreen ~ #wrapper-fijo #icon {
+    display: none !important;
+}
+
+
+/* Input + botones pegados abajo y que no se suban nunca */
+#chatPanel.fullscreen .chat-input-container {
+    position: relative;
+    padding-bottom: env(safe-area-inset-bottom); /* evita que el teclado tape el input */
+    background: rgba(0,0,0,0.9);
+    border-top: 2px solid #0f0;
+    /* Añadimos las mismas reglas de ajuste de texto por si acaso */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+/* Que el textarea crezca un poco más en fullscreen */
+#chatPanel.fullscreen #chatInput {
+    height: 70px !important;
+    font-size: 18px !important;
+    padding-right: 130px !important;
+    /* Aseguramos que el textarea tampoco desborde */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: pre-wrap;
+}
+
+/* Botones más grandes y bien posicionados */
+#chatPanel.fullscreen #chatSend, #chatPanel.fullscreen #fullscreenChatBtn {
+    height: 48px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+}
+
+#chatPanel.fullscreen #chatSend {
+    width: 90px;
+    right: 8px;
+}
+
+#chatPanel.fullscreen #fullscreenChatBtn {
+    width: 30px;
+    height:27px;
+    right: 105px;
+}
+
+/* Estilos para el bloqueo de spam en el chat */
+#chatInput.bloqueado {
+  background: rgba(255, 0, 0, 0.2) !important;
+  color: #ff0000 !important;
+  border-color: #ff0000 !important;
+  pointer-events: none;
+  opacity: 0.6;
+}
+#avisoSpam {
+  display: none;
+  background: rgba(255, 0, 0, 0.8);
+  color: #fff;
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  text-align: center;
+  font-weight: bold;
+  border: 1px solid #ff0000;
+  animation: pulse 1s infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+.credito {
+  font-size: 16px;
+  text-align: center;
+  width: 100%;
+  font-weight: bold;
+  animation: cambiarColor 2s infinite alternate;
+}
+
+@keyframes cambiarColor {
+  0% {
+    color: red;
+  }
+  50% {
+    color: blue;
+  }
+  100% {
+    color: green;
+  }
+}
+</style>
+</head>
+<body>
+    
+    </div>
+<div id="wrapper-fijo">
+  <button id="menuBtn" onclick="togglePanel()">Menu</button>
+  <img id="icon" src="https://i.postimg.cc/bN96LLJP/pixiz-15-11-2025-23-15-26.jpg" />
+  <div id="reloj" style="position:absolute;top:10px;left:10px;color:#00ff00;font-family:monospace;font-size:18px;text-shadow:0 0 8px #00ff00;"></div>
+
+  <div id="submenu">
+    <div class="matrix-wrap" id="matrixWrap" style="border:none;">
+      <div id="fakeSelect" class="btn-no-theme">Cargando tus enlaces únicos...</div>
+      <div id="optionsList" role="listbox" style="display:none;"></div>
+      <button class="btn btn-no-theme" onclick="copiarLink()" style="margin-top:8px;">Copiar Link</button>
+      <div id="mensajeCopiado">LINK COPIADO OK</div>
+      <button id="btnMostrarAcortador" class="btn" style="margin-top:8px;">Acortar enlace</button>
+    </div>
+
+    <div id="ventanaAcortador">
+      <h3 style="color:#00ff00;margin-bottom:10px;">Acortar enlace</h3>
+      <input type="text" id="acortadorUrlOriginal" placeholder="Ingresa el link original" style="width:100%;margin-bottom:6px;padding:6px"/>
+      <input type="text" id="acortadorUrlAlias" placeholder="Alias personalizado (opcional)" style="width:100%;margin-bottom:6px;padding:6px"/>
+      <button class="btn" id="acortadorBtn">Acortar</button>
+      <div id="acortadorResultado" style="margin-bottom:6px;color:#0f0;word-break:break-all;"></div>
+      <div id="mensajeCopiadoAcortador">ENLACE ACORTADO COPIADO OK</div>
+      <button id="btnCerrarAcortador" class="btn" style="background:#800;color:#fff;">Cerrar</button>
+    </div>
+
+    <!-- TU CHAT ORIGINAL CON EL NUEVO BOTÓN DE PANTALLA COMPLETA INTEGRADO -->
+    <div id="chatPanel" style="margin-top:12px;position:relative;z-index:2;color:#0f0;font-family:monospace;">
+      <h3 id="chatTitle">Chat Online</h3> <!-- Añadido ID "chatTitle" -->
+      <!-- Agregamos un div para el campo de texto "Tu nombre" para poder ocultarlo fácilmente -->
+ <div class="chat-usuario-wrapper" id="chatUsuarioWrapper" style="display: flex; gap: 8px; align-items: center;"> 
+    <input id="chatUsuario" type="text" placeholder="Tu nombre" style="flex-grow: 1; padding:6px;border-radius:6px;border:2px solid #0f0;background:transparent;color:#0f0;font-family:monospace;font-size:16px;"/> 
+    <input type="color" id="chatColor" value="#00ff00" title="Elige tu color" style="width: 45px; height: 40px; border: 2px solid #0f0; background: #111; cursor: pointer; border-radius: 6px; flex-shrink: 0;">
+</div>
+      <!-- NUEVO: Aviso de spam -->
+      <div id="avisoSpam">¡SPAM DETECTADO! Bloqueado por 5 horas. Espera o contacta al Hacker.</div>
+      <div id="chatMessages" style="height:180px;overflow-y:auto;border:2px solid #0f0;padding:6px;border-radius:6px;background:rgba(0,0,0,0);margin-bottom:6px;"></div>
+      <div class="chat-input-container" style="position:relative;width:100%;">
+        <textarea id="chatInput" placeholder="Mensaje..." rows="2" style="width:100%;font-size:18px;line-height:1.4;padding:10px 90px 10px 10px;border-radius:6px;border:2px solid #0f0;background:rgba(0,0,0,0);color:#0f0;font-family:monospace;resize:none;overflow-y:auto;white-space:pre-wrap;word-wrap:break-word;"></textarea>
+         <!-- BOTÓN DE PANTALLA COMPLETA -->
+        <button id="fullscreenChatBtn" onclick="toggleFullscreenChat()">MAX</button>
+        <!-- BOTÓN ENVIAR ORIGINAL -->
+        <button id="chatSend" style="position:absolute;right:4px;top:50%;transform:translateY(-50%);height:60%;background:#00ff00;color:black;font-weight:bold;border:none;border-radius:6px;padding:0 14px;cursor:pointer;font-family:monospace;">Enviar</button>
+      </div>
+      <button class="btn" style="background:#400;margin-top:8px;" onclick="vaciarChat()">Vaciar chat</button>
+    </div>
+<div class="credito">💢BY King Cracker💢</div>
+    <!-- TU PANEL ORIGINAL COMPLETO -->
+    <div id="panel">
+      <h2 style="color:#00ff00;text-align:center;margin-bottom:18px;position:relative;z-index:2;">MENÚ</h2>
+      <div id="userLogged" style="color:#00ff00;text-align:right;margin-bottom:10px;position:relative;z-index:2;"></div>
+      
+      <button class="btn" onclick="mostrarContacto()" style="position:relative;z-index:2;">CONTACTO</button>
+      <div id="contacto" style="display:none;margin-bottom:10px;position:relative;z-index:2;">
+        <a class="contactoLink">GRUPOS HACKING</a>
+        <a class="contactoLink" href="https://chat.whatsapp.com/HOnj63tvo29BYG5spQiw6Z">Grupo 1</a>
+        <a class="contactoLink" href="https://chat.whatsapp.com/LgVP0F2CJHCDKElUHCoPhq">Grupo 2</a>
+        <a class="contactoLink" href="https://chat.whatsapp.com/BIC64xvpvGF7SkCZtobKH1">Grupo 3</a>
+        <a class="contactoLink" href="https://chat.whatsapp.com/FT9OKhRbUWJ6E1vCojPi97">Grupo 4</a>
+        <a class="contactoLink" href="https://facebook.com/groups/248442627916961/">Facebook</a>
+      </div>
+
+      <button class="btn" onclick="mostrarMisEnlaces()" style="position:relative;z-index:2;">MIS ENLACES CORTADOS</button>
+      <div id="ventanaMisEnlaces" style="display:none;position:fixed;top:50px;left:100px;background:rgba(0,0,0,0.8);padding:20px;border-radius:10px;box-shadow:0 0 20px #00ff00;z-index:9999;max-height:80vh;overflow:auto;">
+        <h3 style="color:#00ff00;margin-bottom:10px;">MIS ENLACES</h3>
+        <div id="enlacesLista"></div>
+        <button class="btn" onclick="cerrarMisEnlaces()" style="margin-top:8px;">Cerrar</button>
+      </div>
+
+      <button class="btn" onclick="mostrarRegistros()" style="position:relative;z-index:2;">VÍCTIMAS</button>
+      <div id="registros" style="margin-top:12px;position:relative;z-index:2;display:none;background:rgba(0,0,0,0.9);padding:15px;border-radius:8px;max-height:70vh;overflow-y:auto;border:2px solid #00ff00;"></div>
+<div id="vista-completa-foto" style="display: none; position: fixed; top: 0; left: 0; width: 100; height: 200%; background-color: rgba(0, 0, 0, 0.9); z-index: 1000; text-align: center;">
+    <img id="imagen-completa"
+     src=""
+     style="width: 90%; height:30%; margin-top: 60px;
+            border-radius: 8px; box-shadow: 0 0 20px rgba(255,255,255,0.5);">
+    <br>
+    <button id="btn-regresar" style="margin-top: 20px; padding: 10px 20px; background-color: #007bff; color: white; border: none; border-radius: 5px; font-size: 16px; cursor: pointer;">Regresar</button>
+</div>
+      <button class="btn" onclick="abrirVentanaColores()" style="margin-top:10px;position:relative;z-index:2;">Cambiar Tema</button>
+      <button class="btn" id="btnTema2" style="margin-top:10px;position:relative;z-index:2;">Tema2</button>
+      <div id="listaTema2">
+        <div class="tema-opt" data-t="none">Ninguno (clásico)</div>
+        <div class="tema-opt" data-t="matrix">Matrix Rain</div>
+        <div class="tema-opt" data-t="grid">Cyber Grid</div>
+        <div class="tema-opt" data-t="scan">Scanlines</div>
+        <div class="tema-opt" data-t="holo">Holograma</div>
+        <div class="tema-opt" data-t="transparent">Transparente</div>
+        <div class="tema-opt" data-t="neon">Neon Glow</div>
+        <div class="tema-opt" data-t="circuit">Circuit Lines</div>
+        <div class="tema-opt" data-t="glitch2">Glitch RGB</div>
+        <div class="tema-opt" data-t="wave">Ondas Verdes</div>
+        <div class="tema-opt" data-t="pulse">Pulso Radial</div>
+        <div class="tema-opt" data-t="hack">Hack Lines</div>
+        <div class="tema-opt" data-t="darkspark">Dark Spark</div>
+        <div class="tema-opt" data-t="neonglow">Neon Glow Black</div>
+        <div class="tema-opt" data-t="darkgrid">Dark Cyber Grid</div>
+        <div class="tema-opt" data-t="darkpulse">Dark Pulse</div>
+        <div class="tema-opt" data-t="cyberspark">Cyber Spark</div>
+        <div class="tema-opt" data-t="darkglitch">Dark Glitch</div>
+        <div class="tema-opt" data-t="darkwave">Dark Wave</div>
+        <div class="tema-opt" data-t="darkscan">Dark Scanlines</div>
+        <div class="tema-opt" data-t="darkholo">Dark Holo</div>
+        <div class="tema-opt" data-t="darkcircuit">Dark Circuit</div>
+      </div>
+
+      <button id="btnFondoEnlaces" class="btn" style="margin-top:8px;position:relative;z-index:3;" onclick="mostrarOcultarImagenesFondoEnlaces()">Cambiar fondo Enlaces</button>
+      <button id="btnFondoInicio" class="btn" style="margin-top:8px;position:relative;z-index:3;" onclick="mostrarOcultarImagenesFondoInicio()">Cambiar fondo de Inicio</button>
+
+      <div id="imagenesFondoEnlaces" style="display:none;position:relative;z-index:4;margin-top:10px;background:rgba(0,0,0,0.8);padding:10px;border-radius:10px;">
+        <h4 style="color:#00ff00;">Selecciona una imagen para Enlaces:</h4>
+        <div id="imagenesEnlacesLista" style="display:grid;grid-template-columns:repeat(auto-fill,120px);gap:10px;max-height:320px;overflow:auto;"></div>
+      </div>
+      <div id="imagenesFondoInicio" style="display:none;position:relative;z-index:4;margin-top:10px;background:rgba(0,0,0,0.8);padding:10px;border-radius:10px;box-shadow:0 0 15px #00ff00;">
+        <h4 style="color:#00ff00;">Selecciona una imagen para el fondo de Inicio:</h4>
+        <div id="imagenesInicioLista" style="display:grid;grid-template-columns:repeat(auto-fill,120px);gap:10px;max-height:320px;overflow:auto;"></div>
+      </div>
+<!-- Contenedor para la galería de fondos del menú -->
+<div id="imagenesFondoMenuLateral" style="display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:rgba(0,0,0,0.95);border:4px solid #0f0;padding:20px;border-radius:15px;max-width:90%;max-height:80%;overflow:auto;z-index:99999;box-shadow:0 0 50px #0f0;">
+  <div style="text-align:center;color:#0f0;font-size:20px;margin-bottom:15px;">Selecciona fondo para el menú lateral</div>
+  <div id="imagenesMenuLateralLista"></div>
+  <button class="btn" onclick="$id('imagenesFondoMenuLateral').style.display='none'" style="margin-top:15px;">Cerrar</button>
+</div>
+
+<!-- Botón para abrir la galería (ponlo donde quieras, ej: en el submenu o panel) -->
+<button class="btn" onclick="cambiarFondoMenu()" style="margin:10px 0;">Cambiar fondo menú</button>
+<!-- NUEVO BOTÓN CURSOS -->
+<button class="btn" 
+        onclick="window.location.href='https://elhacker.info/'" 
+        style="margin-top:10px; animation: glitch 2.5s infinite alternate-reverse; letter-spacing: 2px; text-transform: uppercase; box-shadow: 0 0 12px #00ff00, inset 0 0 8px #00ff00;">
+  C U R S O S
+</button>
+      <button class="btn" onclick="togglePanel()" style="margin-top:12px;position:relative;z-index:2;">CERRAR MENÚ</button>
+    </div>
+
+    <div id="ventanaColores" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.95);z-index:11000;justify-content:flex-start;align-items:center;flex-direction:column;padding:24px;box-sizing:border-box;overflow:auto;border-top:4px solid #00ff00;">
+      <h3 style="color:#00ff00;text-shadow:0 0 8px #00ff00;margin-bottom:14px;">Selecciona un tema (preview al pasar)</h3>
+      <div id="todosColores" style="display:grid;grid-template-columns:repeat(auto-fill,44px);gap:12px;width:100%;max-width:760px;justify-content:center;margin-bottom:18px;"></div>
+      <div style="display:flex;gap:10px;margin-bottom:10px;">
+        <button class="btn" onclick="restaurarTemaOriginal()">Volver al tema original</button>
+        <button class="btn" onclick="cerrarVentanaColores()">Cerrar</button>
+      </div>
+    </div>
+
+    <div id="usuariosOnlineBox" style="position:fixed;top:55px;right:15px;z-index:9990;pointer-events:none;">
+      <div style="background:rgba(0,0,0,0.85);border:2px solid #0f0;border-radius:12px;padding:10px 18px;display:flex;align-items:center;gap:10px;box-shadow:0 0 20px #0f0,inset 0 0 15px rgba(0,255,0,0.1);backdrop-filter:blur(8px);">
+        <div style="width:5px;height:5px;background:#0f0;border-radius:50%;box-shadow:0 0 15px #0f0;animation:pulse 2s infinite;"></div>
+        <span style="color:#0f0;font-family:monospace;font-weight:bold;letter-spacing:1px;font-size:7px;">
+          Usuarios Activos: <span id="contadorActivos">0</span>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TU RELOJ Y TEMA2 ORIGINAL + NUEVA FUNCIÓN toggleFullscreenChat -->
+<script>
+function actualizarReloj() {
+  const ahora = new Date();
+  const h = String(ahora.getHours()).padStart(2, '0');
+  const m = String(ahora.getMinutes()).padStart(2, '0');
+  const s = String(ahora.getSeconds()).padStart(2, '0');
+  document.getElementById('reloj').textContent = `${h}:${m}:${s}`;
+}
+setInterval(actualizarReloj, 1000);
+actualizarReloj();
+
+function togglePanel() {
+  document.getElementById("panel").classList.toggle("abierto");
+}
+
+/* Función para alternar el modo de pantalla completa del chat */
+function toggleFullscreenChat() {
+  const panel = document.getElementById('chatPanel');
+  const menuBtn = document.getElementById('menuBtn'); // Botón Menú
+  const chatTitle = document.getElementById('chatTitle'); // Título "Chat Online"
+  const chatUsuarioWrapper = document.getElementById('chatUsuarioWrapper'); // Contenedor del campo "Tu nombre"
+  const button = document.getElementById('fullscreenChatBtn');
+  const matrixWrap = document.getElementById('matrixWrap');
+  const ventanaAcortador = document.getElementById('ventanaAcortador');
+  const usuariosOnlineBox = document.getElementById('usuariosOnlineBox'); 
+  const wrapperFijo = document.getElementById('wrapper-fijo');
+
+  if (panel.classList.contains('fullscreen')) {
+    // Modo MINIMIZAR
+    panel.classList.remove('fullscreen');
+    button.textContent = 'MAX';
+    
+    // Mostrar los elementos ocultados
+    if (chatTitle) chatTitle.classList.remove('oculto');
+    if (chatUsuarioWrapper) chatUsuarioWrapper.classList.remove('oculto');
+    if (menuBtn) menuBtn.classList.remove('oculto');
+    
+    // Restaurar otros elementos
+    if (matrixWrap) matrixWrap.style.display = 'block';
+    if (usuariosOnlineBox) usuariosOnlineBox.style.display = 'block'; 
+
+    // Restaurar el scroll del cuerpo si aplica
+    wrapperFijo.style.overflow = 'hidden';
+
+  } else {
+    // Modo MAXIMIZAR
+    panel.classList.add('fullscreen');
+    button.textContent = 'MIN';
+
+    // Ocultar los elementos solicitados
+    if (chatTitle) chatTitle.classList.add('oculto');
+    if (chatUsuarioWrapper) chatUsuarioWrapper.classList.add('oculto');
+    if (menuBtn) menuBtn.classList.add('oculto');
+    
+    // Ocultar otros elementos (manteniendo tu lógica anterior)
+    if (matrixWrap) matrixWrap.style.display = 'none';
+    if (ventanaAcortador) ventanaAcortador.style.display = 'none';
+    if (usuariosOnlineBox) usuariosOnlineBox.style.display = 'none';
+    
+    // Permitir el scroll en el body
+    wrapperFijo.style.overflow = 'auto'; // Permitimos el scroll en el wrapper principal
+  }
+}
+
+
+document.getElementById("btnTema2").onclick = function(e) {
+  e.stopPropagation();
+  const lista = document.getElementById("listaTema2");
+  lista.style.display = lista.style.display === "block" ? "none" : "block";
+};
+
+document.querySelectorAll('.tema-opt').forEach(item => {
+  item.onclick = function() {
+    const efecto = this.dataset.t;
+    document.querySelectorAll('.btn,#menuBtn,#chatSend,#fakeSelect,#chatPanel,#chatMessages,#chatInput,#chatUsuario,#acortador,.btn-copiar,#panel,#submenu > div,#registros,#ventanaAcortador,#ventanaMisEnlaces,#modalContent,#usuariosOnlineBox div,#btnMostrarAcortador,#acortadorBtn,.btn[onclick="copiarLink()"]').forEach(el => {
+      el.classList.remove('tema-none','tema-matrix','tema-grid','tema-scan','tema-holo','tema-transparent','tema-neon','tema-circuit','tema-glitch2','tema-wave','tema-pulse','tema-hack','tema-darkspark','tema-neonglow','tema-darkgrid','tema-darkpulse','tema-cyberspark','tema-darkglitch','tema-darkwave','tema-darkscan','tema-darkholo','tema-darkcircuit');
+      el.classList.add('tema-' + efecto);
+    });
+    localStorage.setItem('tema2', efecto);
+    document.getElementById("listaTema2").style.display = "none";
+  };
+});
+
+const savedTema = localStorage.getItem('tema2') || 'none';
+document.querySelectorAll('.btn,#menuBtn,#chatSend,#fakeSelect,#chatPanel,#chatMessages,#chatInput,#chatUsuario,#acortador,.btn-copiar,#panel,#submenu > div,#registros,#ventanaAcortador,#ventanaMisEnlaces,#modalContent,#usuariosOnlineBox div,#btnMostrarAcortador,#acortadorBtn,.btn[onclick="copiarLink()"]').forEach(el => {
+  el.classList.add('tema-' + savedTema);
+});
+</script>
+
+<!-- PROTECCIÓN + FIREBASE MODERNO (SIN ROMPER NADA) -->
+<!-- NOTA: Debido a que la importación de módulos requiere que el archivo sea servido, este código puede no funcionar correctamente si se abre directamente desde el disco duro (file://). -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-app.js";
+  import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-auth.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyBgqYhRV8CrmlMkr6yBF1DpE_zCgXIE660",
+    authDomain: "panel-admi-633cd.firebaseapp.com",
+    projectId: "panel-admi-633cd",
+    storageBucket: "panel-admi-633cd.firebasestorage.app",
+    messagingSenderId: "664308369374",
+    appId: "1:664308369374:web:4342c3a417968b1d23bf4f"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+
+  document.body.style.display = "none";
+  document.write('<div id="bloqueo" style="position:fixed;top:0;left:0;width:100vw;height:100vh;background:black;color:#0f0;z-index:999999;display:flex;align-items:center;justify-content:center;font-size:40px;font-family:monospace;letter-spacing:4px;text-shadow:0 0 20px #0f0;">CARGANDO PANEL...</div>');
+
+onAuthStateChanged(auth, async (user) => { // <-- AÑADIMOS async AQUÍ
+    const bloqueo = document.getElementById("bloqueo");
+    if (user) {
+        if (bloqueo) bloqueo.remove();
+        document.body.style.display = "block";
+        localStorage.setItem('scam_owner_uid', user.uid);
+        
+        // --> AÑADE ESTA LÍNEA AQUÍ <--
+        await cargarColorUsuario();
+        
+    } else {
+        location.replace("login.html");
+    }
+});
+
+setTimeout(() => {
+    if (!auth.currentUser) location.replace("login.html");
+}, 5000);
+// ================== FUNCIONES PARA EL COLOR DE CHAT ==================
+
+// Función para cargar el color guardado del usuario al iniciar sesión
+async function cargarColorUsuario() {
+    if (!miUserDocId) return;
+    try {
+        const userDocRef = doc(db, "panelUsers", miUserDocId);
+        const userSnap = await getDoc(userDocRef);
+        if (userSnap.exists()) {
+            const colorGuardado = userSnap.data().colorChat;
+            if (colorGuardado && $id("chatColor")) {
+                $id("chatColor").value = colorGuardado;
+            }
+        }
+    } catch (error) {
+        console.error("Error al cargar color de usuario:", error);
+    }
+}
+
+// Evento que se activa cuando el usuario cambia el color con el selector
+document.addEventListener('DOMContentLoaded', () => {
+    const chatColorInput = $id("chatColor");
+    if (chatColorInput) {
+        chatColorInput.addEventListener('change', async (event) => {
+            const colorElegido = event.target.value;
+            if (!miUserDocId) return;
+            try {
+                await updateDoc(doc(db, "panelUsers", miUserDocId), {
+                    colorChat: colorElegido
+                });
+                console.log("Color de chat guardado:", colorElegido);
+            } catch (error) {
+                console.error("Error al guardar color de usuario:", error);
+            }
+        });
+    }
+});
+</script>
+<script>
+// CAMBIAR NOMBRE SOLO UNA VEZ CADA 12 HORAS + MENSAJE ÉPICO
+const inputNombre = document.getElementById("chatUsuario");
+
+// Función para actualizar el nombre del usuario en el sistema
+function actualizarNombreUsuario() {
+    const nombre = inputNombre.value.trim() || "Anónimo";
+    // Guardar el nombre en localStorage
+    if (!localStorage.getItem("nombreChat12h")) {
+        localStorage.setItem("nombreChat12h", nombre);
+        localStorage.setItem("ultimoCambio12h", Date.now().toString());
+    }
+    // Actualizar la variable global del nombre del usuario si existe
+    if (typeof window.nombreUsuario !== 'undefined') {
+        window.nombreUsuario = nombre;
+    }
+    return nombre;
+}
+
+// Cargar nombre guardado al abrir
+window.addEventListener("load", () => {
+    const nombreGuardado = localStorage.getItem("nombreChat12h");
+    if (nombreGuardado) {
+        inputNombre.value = nombreGuardado;
+        actualizarNombreUsuario();
+    }
+});
+
+// Detectar cambios en el input en tiempo real
+inputNombre.addEventListener("input", function() {
+    // Solo guardar si no hay un nombre guardado previamente
+    if (!localStorage.getItem("nombreChat12h")) {
+        const nombreActual = this.value.trim();
+        if (nombreActual) {
+            localStorage.setItem("nombreChat12h", nombreActual);
+            localStorage.setItem("ultimoCambio12h", Date.now().toString());
+            actualizarNombreUsuario();
+        }
+    }
+});
+
+// Cuando intenta cambiar el nombre (al presionar Enter o salir del campo)
+inputNombre.addEventListener("change", function() {
+    const nuevoNombre = this.value.trim();
+    const ultimoCambio = localStorage.getItem("ultimoCambio12h") || "0";
+    const ahora = Date.now();
+    const doceHoras = 12 * 60 * 60 * 1000;
+    
+    // Si no hay nombre guardado, guardar el primer nombre ingresado
+    if (!localStorage.getItem("nombreChat12h")) {
+        localStorage.setItem("nombreChat12h", nuevoNombre || "Anónimo");
+        localStorage.setItem("ultimoCambio12h", ahora);
+        actualizarNombreUsuario();
+        return;
+    }
+    
+    // Si no han pasado 12 horas → bloquea + mensaje crack
+    if (ahora - parseInt(ultimoCambio) < doceHoras) {
+        // Vuelve al nombre anterior
+        const nombreAnterior = localStorage.getItem("nombreChat12h") || "Anónimo";
+        this.value = nombreAnterior;
+        // MENSAJE ÉPICO PERSONALIZADO
+        mostrarMensajeBloqueo();
+        return;
+    }
+    
+    // Si ya pasaron las 12 horas → permite cambiar
+    localStorage.setItem("nombreChat12h", nuevoNombre || "Anónimo");
+    localStorage.setItem("ultimoCambio12h", ahora);
+    actualizarNombreUsuario();
+});
+
+// FUNCIÓN DEL MENSAJE CRACK
+function mostrarMensajeBloqueo() {
+    // Evita que salga varias veces
+    if (document.getElementById("bloqueoNombre")) return;
+    
+    const div = document.createElement("div");
+    div.id = "bloqueoNombre";
+    div.innerHTML = `
+        <div style="
+            position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.9);z-index:99999;
+            display:flex;justify-content:center;align-items:center;animation:glitch 0.3s infinite;
+        ">
+            <div style="
+                background:#000;border:3px solid #0f0;padding:30px 40px;border-radius:12px;
+                box-shadow:0 0 40px #0f0, inset 0 0 30px rgba(0,255,0,0.3);
+                text-align:center;font-family:monospace;color:#0f0;font-size:22px;
+                text-shadow:0 0 20px #0f0;animation:pulso 1.5s infinite;
+            ">
+                <div style="font-size:28px;margin-bottom:15px;animation:glitch2 2s infinite">ACCESO DENEGADO</div>
+                <div style="font-size:20px;">
+                    CAMBIO DE NOMBRE BLOQUEADO<br><br>
+                    <span style="color:#f00;">Espera las 12 horas crack</span>
+                </div>
+            </div>
+        </div>
+    `;
+    document.body.appendChild(div);
+    
+    // Se va solo en 3 segundos
+    setTimeout(() => {
+        if (div && div.parentNode) div.parentNode.removeChild(div);
+    }, 3000);
+}
+
+// Animaciones para que quede bien hacker
+const style = document.createElement("style");
+style.innerHTML = `
+    @keyframes pulso {
+        0%,100% { box-shadow:0 0 40px #0f0, inset 0 0 30px rgba(0,255,0,0.3); }
+        50% { box-shadow:0 0 60px #0f0, inset 0 0 50px rgba(0,255,0,0.5); }
+    }
+    @keyframes glitch2 {
+        0%,100% { text-shadow:0 0 10px #0f0; }
+        20% { text-shadow:6px 0 #f00,-6px 0 #0ff; }
+        40% { text-shadow:-6px 0 #f00,6px 0 #0ff; }
+        60% { text-shadow:4px 0 #ff0,-4px 0 cyan; }
+        80% { text-shadow:-4px 0 magenta,4px 0 yellow; }
+    }
+`;
+document.head.appendChild(style);
+</script>
+
+<!-- TU MODULE.JS -->
+<script type="module" src="module.js"></script>
+<div style="display:none;">
+    
+</body>
+</html>

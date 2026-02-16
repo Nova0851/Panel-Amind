@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Login - Scam King Crack</title>
+<style>
+:root{
+  --green:#00ff66;
+  --red:#ff0033;
+  --bg:#000;
+  --card-bg:rgba(0,0,0,0.2);
+  --font:"Arial",Helvetica,sans-serif;
+}
+
+*{box-sizing:border-box;}
+html,body{height:100%;margin:0;}
+
+body{
+  font-family:var(--font);
+  background:var(--bg);
+  color:var(--green);
+  overflow: hidden; /* evita scroll vertical */
+  margin:0;
+  height:100vh;
+  width:100vw;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+}
+
+/* ===============================
+   MATRIX / FONDO
+================================ */
+#matrixCanvas{
+  position:fixed;
+  top:0;left:0;
+  width:100vw;height:100vh;
+  z-index:-2;
+  background:#000;
+}
+
+/* ===============================
+   CONTENEDORES
+================================ */
+@media(max-width:480px){
+  .page-wrapper{
+    min-height: auto; /* ya no fuerza 100vh */
+    padding: 10px;
+    justify-content: flex-start; /* permite scroll si es necesario */
+    gap: 12px;
+  }
+.login-card{
+  width:100%;
+  background:var(--card-bg);
+  padding:28px;
+  border-radius:12px;
+  backdrop-filter:blur(4px);
+  box-shadow:none;
+}
+
+.login-card h2{
+  margin:0 0 18px;
+  text-align:center;
+  color:var(--green);
+  font-size:20px;
+  font-weight:700;
+}
+
+/* ===============================
+   PRO WRAP (INPUTS + BOTÓN)
+================================ */
+.pro-wrap{
+  position:relative;
+  width:100%;
+  height:52px;
+  margin-bottom:14px;
+}
+.pro-wrap svg{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  z-index:3;
+  pointer-events:none;
+}
+/* Borde animado */
+.pro-border{
+  fill:none;
+  stroke:#00ff66;
+  stroke-width:3;
+  stroke-linecap:round;
+  stroke-dasharray:80 360;
+  animation:recorrer 1.6s linear infinite;
+  filter:drop-shadow(0 0 6px #00ff66);
+}
+.pro-wrap input:not(:focus) + svg .pro-border{
+  animation:none;
+  opacity:.6;
+}
+.pro-wrap:focus-within .pro-border{
+  animation:none;
+  opacity:.6;
+}
+
+.pro-wrap:focus-within input:not(:placeholder-shown) ~ svg .pro-border{
+  animation:recorrer 1.6s linear infinite;
+  opacity:1;
+}
+.pro-border-glow{
+  fill:none;
+  stroke:#00ff66;
+  stroke-width:6;
+  stroke-linecap:round;
+  stroke-dasharray:80 360;
+  opacity:.35;
+  animation:recorrer 1.6s linear infinite;
+  filter:blur(4px);
+}
+
+@keyframes recorrer{
+  to{stroke-dashoffset:-440;}
+}
+
+/* ===============================
+   INPUTS
+================================ */
+.pro-wrap {
+  width: 400px; /* ancho fijo más visible, ajusta según necesidad */
+  max-width: 90%; /* para que sea responsivo en pantallas pequeñas */
+  margin: 20px auto; /* centra horizontalmente */
+}
+
+.pro-wrap input {
+  width: 100%;
+  height: 50px; /* más alto para verse “grande” */
+  padding: 14px;
+  border-radius: 8px;
+  border: none;
+  background: transparent;
+  color: var(--green);
+  font-size: 18px;
+  outline: none;
+  position: relative;
+  z-index: 2;
+  box-shadow: inset 0 0 6px rgb(255, 7, 58);
+  display: block;
+}
+
+.pro-wrap input::placeholder{
+  color:rgba(0,255,0,.4);
+}
+
+.pro-wrap input:focus{
+  box-shadow:0 0 22px rgb(255, 7, 58)
+             inset 0 0 10px rgb(255, 7, 58)
+}
+
+/* ===============================
+   BOTÓN ENTRAR (GRADIENTE ANIMADO)
+================================ */
+.btn-gradient{
+  width:100%;
+  height:100%;
+  border:none;
+  border-radius:8px;
+  background:linear-gradient(
+    90deg,
+    #ff0033,
+    #ff6a00,
+    #00ff66,
+    #00c3ff,
+    #ff0033
+  );
+  background-size:300% 100%;
+  color:#fff;
+  font-weight:900;
+  font-size:16px;
+  letter-spacing:1px;
+  cursor:pointer;
+  position:relative;
+  overflow:hidden;
+  animation:gradientMove 3s linear infinite;
+  transition:transform .2s, box-shadow .2s;
+}
+
+.btn-gradient:hover{
+  transform:scale(1.03);
+  box-shadow:0 0 18px rgba(255,0,0,.6);
+}
+
+.btn-gradient:disabled{
+  animation:none;
+  background:#555;
+  cursor:not-allowed;
+}
+
+/* Animación izquierda → derecha */
+@keyframes gradientMove{
+  0%{background-position:0% 50%;}
+  100%{background-position:100% 50%;}
+}
+
+.pro-wrap button:hover{
+  transform:scale(1.02);
+  box-shadow:0 0 18px rgba(255,0,0,.6);
+}
+
+.pro-wrap button:disabled{
+  opacity:.7;
+  cursor:not-allowed;
+}
+
+/* ===============================
+   SPINNER
+================================ */
+#btnText{transition:opacity .3s;}
+.hidden{opacity:0;}
+
+.spinner{
+  display:none;
+  position:absolute;
+  width:20px;
+  height:20px;
+  border:3px solid rgba(255,255,255,.3);
+  border-top:3px solid #fff;
+  border-radius:50%;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  animation:spin 1s linear infinite;
+}
+
+.spinner.active{display:block;}
+
+@keyframes spin{
+  to{transform:translate(-50%,-50%) rotate(360deg);}
+}
+
+/* ===============================
+   MENSAJES
+================================ */
+.message{
+  text-align:center;
+  margin-top:10px;
+  font-size:14px;
+  color:var(--green);
+}
+
+.error{color:#ff4c4c;}
+
+/* ===============================
+   SHAKE
+================================ */
+@keyframes shake{
+  0%{transform:translateX(0);}
+  10%,30%,50%,70%,90%{transform:translateX(-10px);}
+  20%,40%,60%,80%,100%{transform:translateX(10px);}
+}
+
+.shake{
+  animation:shake .6s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+@media(max-width:480px){
+  .login-card{padding:22px;}
+}
+#matrix-skull-container{
+  position:relative;
+  width:100%;
+  display:flex;
+  justify-content:center;
+  margin-top:10px;
+}
+
+#matrix-skull{
+  font-size:clamp(6px, 2vw, 10px);
+  line-height:1.1;
+  max-width:100%;
+  overflow:hidden;
+  text-align:center;
+}
+  @keyframes matrixGlow{0%,100%{opacity:0.3;}50%{opacity:1;}}
+  @media (max-width:480px){#matrix-skull{font-size:7px;line-height:7px;}}
+  /* ===============================
+   TEXTO HACKER CON BORDES ANIMADOS
+================================ */
+.hacker-wrapper{
+  position: relative;
+  width: 100%;
+  min-height: 100px;
+  margin: 24px 0;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+@media(max-width:480px){
+  .hacker-text{
+    font-size: clamp(18px, 10vw, 36px);
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}
+
+/* Glitch animado estilo hacker */
+@keyframes glitch {
+  0%, 20%, 40%, 60%, 80%, 100% {
+    text-shadow:
+      2px 0 #0f0, 
+      -2px 0 #f00, 
+      0 2px #00f,
+      0 -2px #0ff;
+  }
+  10%, 30%, 50%, 70%, 90% {
+    text-shadow:
+      -2px 0 #0f0, 
+      2px 0 #f00, 
+      0 -2px #00f,
+      0 2px #0ff;
+  }
+}
+
+#hacker-sparks{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+@media(max-width:480px){
+  .whatsapp-float{
+    max-width:90%;
+    margin: 10px auto;
+  }
+  .whatsapp-text{
+    font-size:13px;
+    padding:6px 12px;
+  }
+  .whatsapp-icon{
+    width:60px;
+    height:60px;
+  }
+}
+
+  .whatsapp-text {
+    background: rgba(0,0,0,0.7);
+    color: #25D366;
+    padding: 8px 16px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 15px;
+    box-shadow: 0 0 20px rgba(37,213,102,0.4);
+    white-space: nowrap;
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(37,213,102,0.3);
+  }
+
+  .whatsapp-icon {
+    width: 72px;
+    height: 72px;
+    background: linear-gradient(145deg, #25D366, #128C7E);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 
+      0 8px 32px rgba(37,213,102,0.5),
+      0 0 0 8px rgba(37,213,102,0.15);
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  .whatsapp-icon:hover {
+    transform: scale(1.12) rotate(8deg);
+    box-shadow: 
+      0 12px 48px rgba(37,213,102,0.7),
+      0 0 0 12px rgba(37,213,102,0.25);
+  }
+
+  .whatsapp-icon svg {
+    width: 48px;
+    height: 48px;
+    fill: white;
+  
+}
+.btn-hacker{
+  font-family:'Courier New', monospace;
+  font-size:18px;
+  font-weight:900;
+  letter-spacing:4px;
+  color:#fff;
+  position:relative;
+  z-index:2;
+  text-shadow:
+    0 0 6px #00ff66,
+    0 0 14px #00ff66,
+    0 0 28px rgba(0,255,102,.8);
+  animation: hackerFlicker 1.8s infinite;
+}
+@keyframes hackerFlicker{
+  0%, 100%{
+    opacity:1;
+    text-shadow:
+      0 0 6px #00ff66,
+      0 0 14px #00ff66,
+      0 0 28px rgba(0,255,102,.8);
+  }
+  40%{
+    opacity:.85;
+    text-shadow:
+      2px 0 #ff0033,
+      -2px 0 #00ff66,
+      0 0 20px #00ff66;
+  }
+  60%{
+    opacity:1;
+    text-shadow:
+      -2px 0 #00c3ff,
+      2px 0 #00ff66,
+      0 0 26px #00ff66;
+}
+.pro-wrap{
+  overflow:hidden;
+}
+#matrix-skull {
+  transition: color 0.5s ease-in-out; /* transición suave entre colores */
+}
+/* ===============================
+   GUSANITOS AZULES VISIBLES
+================================ */
+
+.hacker-text{
+  position: relative;
+  font-family:'Courier New', monospace;
+  font-weight:900;
+  letter-spacing:4px;
+  color:#ffffff;
+  z-index:5;
+
+  /* glow base */
+  text-shadow:
+    0 0 6px #00c3ff,
+    0 0 14px #00c3ff,
+    0 0 30px rgba(0,195,255,.9);
+}
+
+/* gusanito 1 */
+.hacker-text::before,
+/* gusanito 2 */
+.hacker-text::after{
+  content:"N4S4 PEZ";
+  position:absolute;
+  inset:0;
+  color:transparent;
+  pointer-events:none;
+
+  -webkit-text-stroke: 1.5px #00c3ff;
+  filter: drop-shadow(0 0 8px #00c3ff);
+  animation: gusanoMove 1.8s linear infinite;
+}
+
+/* segundo gusanito desfasado */
+.hacker-text::after{
+  -webkit-text-stroke: 1.5px #6be7ff;
+  filter: drop-shadow(0 0 12px #6be7ff);
+  animation-delay: -.9s;
+  opacity:.8;
+}
+
+/* animación tipo gusano recorriendo bordes */
+@keyframes gusanoMove {
+  0% {
+    clip-path: inset(0 100% 0 0);
+  }
+  50% {
+    clip-path: inset(0 0 0 0);
+  }
+  100% {
+    clip-path: inset(0 0 0 100%);
+  }
+}
+  .page-wrapper{
+    width:100vw;
+    padding:0 10px;
+  }
+
+  .login-card{
+    width:100%;
+    max-width:none;      /* 👈 rompe el límite */
+    padding:26px 14px;
+  }
+
+  .pro-wrap{
+    width:100%;
+  }
+
+  .btn-hacker{
+    font-size:18px;
+    letter-spacing:3px;
+  }
+
+@media (max-width:480px){
+
+  body{
+    overflow-y:auto;
+  }
+
+  .page-wrapper{
+    width:100vw;
+    padding:0 12px;
+  }
+
+  .login-card{
+    width:100%;
+    max-width:none;
+    padding:22px 14px;
+  }
+
+  .pro-wrap{
+    width:100%;
+    height:56px;
+  }
+
+  .pro-wrap input,
+  .pro-wrap button{
+    width:100%;
+    height:100%;
+    font-size:18px;
+  }
+
+  /* 🔥 SVG SE ADAPTA AL ANCHO REAL */
+  .pro-wrap svg{
+    width:100%;
+    height:100%;
+  }
+
+}
+</style>
+</head>
+<body>
+   <div id="matrix-skull-container">
+    <pre id="matrix-skull">⠀⠀⠀⠀⠀⠀⠀⠀                                                            
+                                                            
+                @:.                      ..@                
+             %-:-#                         =+:%             
+           @-::%                            @-.:=           
+          @=.:@                              %-.:=          
+         *#.:+                                @:.:+@        
+        %-:.:#                                @:..:=        
+       @*@..=*                                @-...+@       
+       @-#..-+                                %--..:%       
+       #+%..:+                                #:....*       
+       @=....:@                              @:... :=@      
+       *=@:...:=%                          %--:.....=#      
+       @=@=... ..::----=%          %@=-:-::.....   .-       
+       %*:::.....:......:=%@----=*%=::..:.. ...  ...%       
+        @=:#.%*... ... ...:.:::.:.--=.:.. .:      .-@       
+         @=:.:..........   ........==-.  : .    ..+=        
+          ++=:.........   ......... :.    ... ..:=          
+            %=--......   ...........  . . ...--==           
+               ++=-:::.*:............. .:::-@*              
+                   #*--::::........:::::=+                  
+                    @#-@@+::.....::%@=::@                   
+                    %*--@@@+: . :#%%#::-#                   
+                     #-:::-:::...:-::::*                    
+                      *+-:::+-.. ..:-#@                     
+                        %-:::......-*                       
+                         *-::.....:+                        
+                         %-::.....:@                        
+                          @-:....:%                         
+                           *:::::@                          
+                             %@@                            
+                                                            
+                                                              </pre>
+  </div>
+<canvas id="matrixCanvas"></canvas>
+
+<div class="page-wrapper">
+  <div class="login-card" id="loginCard">
+
+    <!-- EMAIL -->
+    <div class="pro-wrap">
+      <input type="email" id="email" placeholder="Correo electrónico" autocomplete="email">
+<svg viewBox="0 0 420 52" preserveAspectRatio="none">
+  <rect class="pro-border" x="1.5" y="1.5" width="417" height="49" rx="8"/>
+</svg>
+    </div>
+
+    <!-- PASSWORD -->
+    <div class="pro-wrap">
+      <input type="password" id="password" placeholder="Contraseña" >
+      <svg viewBox="0 0 420 52" preserveAspectRatio="none">
+
+  <rect class="pro-border" x="3" y="3" width="414" height="46" rx="10"/>
+</svg>
+    </div>
+
+    <!-- HONEYPOT -->
+    <input type="text" id="honeypot" style="position:absolute;opacity:0;height:0;" tabindex="-1">
+
+<div class="pro-wrap no-border" style="height:48px;">
+<button id="loginBtn" class="btn-gradient">
+  <span id="btnText" class="btn-hacker">ENTRAR</span>
+  <div class="spinner" id="spinner"></div>
+</button>
+</div>
+    
+        <rect class="pro-border" x="3" y="3" width="414" height="42" rx="10"/>
+      </svg>
+    </div>
+
+    <div class="message" id="message"></div>
+<div class="hacker-wrapper">
+
+  <canvas id="hacker-sparks"></canvas>
+</div>
+         <div class="whatsapp-float" onclick="window.open('https://wa.me/573247117661','_blank')">
+      <div class="whatsapp-icon">
+        <svg viewBox="0 0 24 24">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.198-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.297-.497.099-.198.05-.371-.025-.52-.074-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+  </div>
+</div>
+
+<audio id="keyBeep">
+  <source src="https://assets.mixkit.co/active_storage/sfx/2577/2577-preview.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Firebase -->
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script>
+
+<script>
+// ────────────────────────────────────────────────
+//  CONFIG FIREBASE (sin cambios)
+// ────────────────────────────────────────────────
+const firebaseConfig = {
+  apiKey: "AIzaSyBgqYhRV8CrmlMkr6yBF1DpE_zCgXIE660",
+  authDomain: "panel-admi-633cd.firebaseapp.com",
+  projectId: "panel-admi-633cd",
+  storageBucket: "panel-admi-633cd.appspot.com",
+  messagingSenderId: "664308369374",
+  appId: "1:664308369374:web:4342c3a417968b1d23bf4f"
+};
+firebase.initializeApp(firebaseConfig);
+const auth = firebase.auth();
+const db = firebase.firestore();
+
+// ────────────────────────────────────────────────
+//  PROTECCIÓN 3 INTENTOS + RICKROLL
+// ────────────────────────────────────────────────
+async function getIP() {
+  try {
+    const r = await fetch("https://api.ipify.org?format=json");
+    const j = await r.json();
+    return j.ip;
+  } catch {
+    return "unknown";
+  }
+}
+
+async function intentoFallido() {
+  const ip = await getIP();
+  let intentos = parseInt(localStorage.getItem("fallos_" + ip) || "0");
+  intentos++;
+  localStorage.setItem("fallos_" + ip, intentos);
+
+  const msg = document.getElementById("message");
+  if (intentos >= 3) {
+    document.body.innerHTML = `<h1 style="color:#0f0;font-family:monospace;text-align:center;padding-top:40vh;font-size:40px;">RATA DETECTADA</h1>`;
+    setTimeout(() => { location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"; }, 1500);
+  } else {
+    msg.textContent = `Credenciales incorrectas (${intentos}/3)`;
+    msg.className = "message error";
+  }
+}
+
+// ────────────────────────────────────────────────
+//  ANTI-COMPARTIR DISPOSITIVO
+// ────────────────────────────────────────────────
+async function getDeviceId() {
+  let id = localStorage.getItem("deviceId");
+  if (!id) {
+    id = "dev_" + Date.now().toString(36) + Math.random().toString(36).substr(2);
+    localStorage.setItem("deviceId", id);
+  }
+  return id;
+}
+
+auth.onAuthStateChanged(async user => {
+  if (user) {
+    const dev = await getDeviceId();
+    const doc = await db.collection("panelUsers").doc(user.uid).get();
+    if (!doc.exists) { auth.signOut(); return; }
+    const data = doc.data();
+
+    if (!data.deviceId) {
+      await db.collection("panelUsers").doc(user.uid).update({deviceId: dev});
+      location.href = "panel.html";
+    } else if (data.deviceId !== dev) {
+      auth.signOut();
+      document.getElementById("message").textContent = "Cuenta vinculada a otro dispositivo";
+      document.getElementById("message").className = "message error";
+    } else {
+      location.href = "panel.html";
+    }
+  }
+});
+
+// ────────────────────────────────────────────────
+//  LOGIN BOTÓN (sincronizado y con protecciones)
+// ────────────────────────────────────────────────
+document.getElementById("loginBtn").onclick = async () => {
+  const email = document.getElementById("email").value.trim();
+  const pass = document.getElementById("password").value;
+  const msg = document.getElementById("message");
+  const txt = document.getElementById("btnText");
+  const spin = document.getElementById("spinner");
+  const card = document.getElementById("loginCard");
+  const btn = document.getElementById("loginBtn");
+
+  if (!email || !pass) {
+    msg.textContent = "Complete los campos";
+    msg.className = "message error";
+    card.classList.add("shake");
+    setTimeout(() => card.classList.remove("shake"), 600);
+    return;
+  }
+
+  txt.classList.add("hidden");
+  spin.classList.add("active");
+  btn.disabled = true;
+
+  try {
+    await auth.signInWithEmailAndPassword(email, pass);
+    // → onAuthStateChanged redirige si todo ok
+  } catch (e) {
+    await intentoFallido();
+    card.classList.add("shake");
+    setTimeout(() => {
+      card.classList.remove("shake");
+      spin.classList.remove("active");
+      txt.classList.remove("hidden");
+      btn.disabled = false;
+    }, 600);
+  }
+};
+
+// Tecla beep
+document.querySelectorAll("input").forEach(i => {
+  i.addEventListener("keydown", () => {
+    const beep = document.getElementById("keyBeep");
+    beep.currentTime = 0;
+    beep.play().catch(()=>{});
+  });
+});
+
+// ────────────────────────────────────────────────
+//  PROTECCIONES ANTI-DEBUG / ANTI-CAPTURA / SOLO MÓVIL
+// ────────────────────────────────────────────────
+document.addEventListener('contextmenu', e => { e.preventDefault(); return false; });
+
+document.addEventListener('keydown', e => {
+  if (e.key === "PrintScreen") {
+    e.preventDefault();
+    navigator.clipboard.writeText('');
+    return false;
+  }
+  if (e.ctrlKey && (e.key==='s'||e.key==='u'||e.key==='c'||e.key==='x'||e.key==='a')) {
+    e.preventDefault(); return false;
+  }
+  if (e.key==='F12' || (e.ctrlKey && e.shiftKey && (e.key==='I'||e.key==='J'))) {
+    e.preventDefault(); return false;
+  }
+});
+
+document.addEventListener('selectstart', e => { e.preventDefault(); });
+
+setInterval(() => {
+  if (window.outerWidth - window.innerWidth > 160 || window.outerHeight - window.innerHeight > 160) {
+    document.body.innerHTML = '';
+  }
+}, 1000);
+
+document.addEventListener('visibilitychange', () => {
+  document.body.style.filter = document.hidden ? 'blur(20px)' : 'none';
+});
+
+(function() {
+  const isMobile = /Android|iPhone|iPad|iPod|Opera Mini|IEMobile/i.test(navigator.userAgent);
+  if (!isMobile) {
+    document.body.innerHTML = `
+      <div style="display:flex;justify-content:center;align-items:center;height:100vh;background:#000;color:#fff;font-family:sans-serif;text-align:center;">
+        <h2>Acceso permitido solo desde dispositivos móviles</h2>
+      </div>
+    `;
+  }
+})();
+</script>
+<script>
+/* =========================================================
+   MATRIX SKULL PULSE
+========================================================= */
+const matrixSkull = document.getElementById('matrix-skull');
+const skullColors = ['#ff0000', '#00ff00', '#00c3ff'];
+let skullIndex = 0;
+
+function pulseMatrixSkull(){
+  matrixSkull.style.color = skullColors[skullIndex];
+  skullIndex = (skullIndex + 1) % skullColors.length;
+  matrixSkull.style.transform = "scale(1.05)";
+  setTimeout(()=>matrixSkull.style.transform="scale(1)",250);
+  setTimeout(pulseMatrixSkull,500);
+}
+pulseMatrixSkull();
+</script>
+
+<script>
+/* =========================================================
+   HACKER SPARKS + GUSANOS AZULES (ÚNICO CANVAS)
+========================================================= */
+const canvas = document.getElementById('hacker-sparks');
+const ctx = canvas.getContext('2d');
+const sparks = [];
+let dashOffset = 0;
+
+function resizeCanvas(){
+  const wrapper = document.querySelector('.hacker-wrapper');
+  canvas.width = wrapper.offsetWidth;
+  canvas.height = wrapper.offsetHeight;
+}
+
+class Spark{
+  constructor(){ this.reset(); }
+  reset(){
+    this.x = canvas.width/2;
+    this.y = canvas.height/2;
+    this.size = Math.random()*3+1;
+    this.vx = (Math.random()-.5)*6;
+    this.vy = (Math.random()-.5)*6;
+    this.life = 1;
+    this.decay = Math.random()*0.02+0.01;
+    this.color = `hsl(${180+Math.random()*60},100%,50%)`;
+  }
+  update(){
+    this.x+=this.vx;
+    this.y+=this.vy;
+    this.life-=this.decay;
+    if(this.life<=0) this.reset();
+  }
+  draw(){
+    ctx.globalAlpha=this.life;
+    ctx.fillStyle=this.color;
+    ctx.shadowBlur=10;
+    ctx.shadowColor=this.color;
+    ctx.beginPath();
+    ctx.arc(this.x,this.y,this.size,0,Math.PI*2);
+    ctx.fill();
+    ctx.globalAlpha=1;
+  }
+}
+
+function drawWormText(){
+  const text = "N4S4 PEZ";
+  const fontSize = Math.min(canvas.width / 5, 64);
+
+  ctx.save();
+  ctx.font = `900 ${fontSize}px Courier New`;
+  ctx.textAlign = "center";
+  ctx.textBaseline = "middle";
+
+  /* base glow */
+  ctx.lineWidth = 2.2;
+  ctx.strokeStyle = "rgba(0,195,255,0.35)";
+  ctx.shadowColor = "#00c3ff";
+  ctx.shadowBlur = 10;
+  ctx.setLineDash([]);
+  ctx.strokeText(text, canvas.width/2, canvas.height/2);
+
+  /* pulso de energía */
+  ctx.lineWidth = 3;
+  ctx.strokeStyle = "#00eaff";
+  ctx.shadowBlur = 18;
+
+  const dashLength = 120;
+  const gap = 600;
+
+  ctx.setLineDash([dashLength, gap]);
+  ctx.lineDashOffset = -dashOffset;
+
+  ctx.strokeText(text, canvas.width/2, canvas.height/2);
+
+  ctx.restore();
+  dashOffset += 6; // velocidad controlada
+}
+function animate(){
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  sparks.forEach(s=>{s.update();s.draw();});
+  drawWormText();
+  requestAnimationFrame(animate);
+}
+
+function init(){
+  resizeCanvas();
+  for(let i=0;i<50;i++) sparks.push(new Spark());
+  animate();
+}
+
+window.addEventListener('resize',resizeCanvas);
+window.addEventListener('load',init);
+</script>
+<div style="display:none;">
+</body>
+</html>
