@@ -1155,3 +1155,4 @@ document.querySelectorAll('.btn,#menuBtn,#chatSend,#fakeSelect,#chatPanel,#chatM
     actualizarUsuarios();
   }, 2000);
 })();
+
